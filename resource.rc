@@ -1,0 +1,12 @@
+ICON_64                 ICON                    "icon_64.ico"
+ICON_48                 ICON                    "icon_48.ico"
+ICON_32                 ICON                    "icon_32.ico"
+ICON_16                 ICON                    "icon_16.ico"
+
+IMG_BACK_OP             IMAGE                   "./material/back_op.png"
+IMG_LOGO                IMAGE                   "./material/logo.png"
+IMG_ITEM                IMAGE                   "./material/item.png"
+
+IMG_CATE_ICON           IMAGE                   "./material/cateicon.png"
+
+BGM_TITLE               SOUND                   "./material/BigPresent.ogg"
