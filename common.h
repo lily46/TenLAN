@@ -1,7 +1,7 @@
 #ifndef TENLAN_COMMON_HEADER
 #define TENLAN_COMMON_HEADER
 
-#include <MikanDev.h>
+#include <Mikan.h>
 #include <sys/stat.h>
 #include <stdio.h>
 #include <time.h>

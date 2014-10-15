@@ -268,7 +268,7 @@ int ExecProgram( int num )
 	sys.process = 0;
 
 	//sprintf_s( filepath, 2047, "%s\\%04d", GAMEDIR, gd[num].num );
-	exe = gd[ num ].exe + strlen( gd[ nu m].exe );
+	exe = gd[ num ].exe + strlen( gd[ num ].exe );
 	while ( *exe != '\\' )
 	{
 		--exe;
