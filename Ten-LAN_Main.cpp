@@ -405,7 +405,9 @@ int PrintVersion( void )
 }
 
 char WTIT[] = TITLE;
+#ifndef _DEBUG
 HWND wnd;
+#endif
 
 //ウィンドウ生成前に1度だけ実行
 void SystemInit( void )
@@ -413,14 +415,13 @@ void SystemInit( void )
 	char a[] = MikanVersion;
 
 	//    char *exe, dir[512];
+#ifndef _DEBUG
 	DWORD startpid, errcode;
 	PROCESS_INFORMATION pi;
 	STARTUPINFO si;
 
-
 	ZeroMemory( &( si ), sizeof( si ) );
 	si.cb=sizeof( si );
-
 	if ( CreateProcess( NULL, "./blackwindow.exe", NULL, NULL, FALSE, NORMAL_PRIORITY_CLASS, NULL, NULL, &(si), &(pi) ) )
 	{
 		Sleep( 1000 );
@@ -441,6 +442,7 @@ void SystemInit( void )
 		errcode = GetLastError();
 		errcode = 0;
 	}
+#endif
 
 	sys.tenlan = new TenLAN();
 
@@ -586,7 +588,9 @@ int MainLoop( void )
 //最後に一度だけ実行される
 void CleanUp( void )
 {
+#ifndef _DEBUG
 	SendMessage ( wnd, WM_CLOSE, 0, 0 );
+#endif
 
 	RestoreTaskbar();
 	sys.ui->Release();
