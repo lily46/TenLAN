@@ -486,7 +486,9 @@ void UserInit( void )
 		sys.GAMEPAD = 0;
 	}
 
+#ifndef _DEBUG
 	HideTaskbar();
+#endif
 
 	// UIはここで指定する。
 	// UIはUIBaseクラスを継承したクラスであれば何でも良い。
@@ -590,13 +592,14 @@ void CleanUp( void )
 {
 #ifndef _DEBUG
 	SendMessage ( wnd, WM_CLOSE, 0, 0 );
+	RestoreTaskbar();
 #endif
 
-	RestoreTaskbar();
+	
 	sys.ui->Release();
 	delete( sys.tenlan );
 	delete( sys.ui );
 	free( gd );
-	RestoreTaskbar();
+	//RestoreTaskbar();
 }
 
