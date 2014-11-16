@@ -414,6 +414,9 @@ void SystemInit( void )
 {
 	char a[] = MikanVersion;
 
+	// Ten-LAN起動中であることを知らせる環境変数の定義。
+	SetEnvironmentVariable( "TENLAN", "1" );
+	
 	//    char *exe, dir[512];
 #ifndef _DEBUG
 	DWORD startpid, errcode;
