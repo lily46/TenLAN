@@ -405,20 +405,23 @@ int PrintVersion( void )
 }
 
 char WTIT[] = TITLE;
+#ifndef _DEBUG
 HWND wnd;
+#endif
 
 //ウィンドウ生成前に1度だけ実行
 void SystemInit( void )
 {
 	char a[] = MikanVersion;
-
+#ifndef _DEBUG
 	//    char *exe, dir[512];
 	DWORD startpid, errcode;
 	PROCESS_INFORMATION pi;
-	SetEnvironmentVariable( "TENLAN", "1" );
 	STARTUPINFO si;
+#endif
+	SetEnvironmentVariable( "TENLAN", "1" );
 
-
+#ifndef _DEBUG
 	ZeroMemory( &( si ), sizeof( si ) );
 	si.cb=sizeof( si );
 
@@ -442,6 +445,7 @@ void SystemInit( void )
 		errcode = GetLastError();
 		errcode = 0;
 	}
+#endif
 
 	sys.tenlan = new TenLAN();
 
@@ -485,7 +489,9 @@ void UserInit( void )
 		sys.GAMEPAD = 0;
 	}
 
+#ifndef _DEBUG
 	HideTaskbar();
+#endif
 
 	// UIはここで指定する。
 	// UIはUIBaseクラスを継承したクラスであれば何でも良い。
@@ -587,13 +593,15 @@ int MainLoop( void )
 //最後に一度だけ実行される
 void CleanUp( void )
 {
+#ifndef _DEBUG
 	SendMessage ( wnd, WM_CLOSE, 0, 0 );
-
 	RestoreTaskbar();
+#endif
+
 	sys.ui->Release();
 	delete( sys.tenlan );
 	delete( sys.ui );
 	free( gd );
-	RestoreTaskbar();
+	
 }
 
