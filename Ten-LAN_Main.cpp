@@ -368,7 +368,7 @@ int GameEnd( void )
 			//sys.end = 0;
 			sys.tenlan->SetEndMode( 0 );
 		}
-		if ( sys.tenlan->InputRight() % 20 == 1 ||
+		if ( sys.tenlan->InputRight() % 20 == 1 || 
 		     sys.tenlan->InputLeft()  % 20 == 1 ||
 		     sys.tenlan->InputUp()    % 20 == 1 ||
 		     sys.tenlan->InputDown()  % 20 == 1 )
@@ -405,23 +405,26 @@ int PrintVersion( void )
 }
 
 char WTIT[] = TITLE;
+#ifndef _DEBUG
 HWND wnd;
+#endif
 
 //ウィンドウ生成前に1度だけ実行
 void SystemInit( void )
 {
 	char a[] = MikanVersion;
 
+	// Ten-LAN起動中であることを知らせる環境変数の定義。
+	SetEnvironmentVariable( "TENLAN", "1" );
+	
 	//    char *exe, dir[512];
+#ifndef _DEBUG
 	DWORD startpid, errcode;
 	PROCESS_INFORMATION pi;
-	SetEnvironmentVariable( "TENLAN", "1" );
 	STARTUPINFO si;
-
 
 	ZeroMemory( &( si ), sizeof( si ) );
 	si.cb=sizeof( si );
-
 	if ( CreateProcess( NULL, "./blackwindow.exe", NULL, NULL, FALSE, NORMAL_PRIORITY_CLASS, NULL, NULL, &(si), &(pi) ) )
 	{
 		Sleep( 1000 );
@@ -442,6 +445,7 @@ void SystemInit( void )
 		errcode = GetLastError();
 		errcode = 0;
 	}
+#endif
 
 	sys.tenlan = new TenLAN();
 
@@ -485,11 +489,13 @@ void UserInit( void )
 		sys.GAMEPAD = 0;
 	}
 
+#ifndef _DEBUG
 	HideTaskbar();
+#endif
 
 	// UIはここで指定する。
 	// UIはUIBaseクラスを継承したクラスであれば何でも良い。
-	sys.ui = new UI_2014( sys.tenlan );//new UI_Hiroki();//new UI_Tour();
+	sys.ui = new UI_Hiroki_Metro( sys.tenlan );//new UI_Hiroki();//new UI_Tour();
 	sys.ui->Init();
 
 	sys.tenlan->SetGameMode( MF_TITLE );
@@ -564,7 +570,7 @@ int MainLoop( void )
 					return 1;
 				}
 			}
-			if( sys.tenlan->InputRight() % 20 == 1 ||
+			if( sys.tenlan->InputRight() % 20 == 1 || 
 				sys.tenlan->InputLeft()  % 20 == 1 ||
 				sys.tenlan->InputUp()    % 20 == 1 ||
 				sys.tenlan->InputDown()  % 20 == 1 )
@@ -587,13 +593,16 @@ int MainLoop( void )
 //最後に一度だけ実行される
 void CleanUp( void )
 {
+#ifndef _DEBUG
 	SendMessage ( wnd, WM_CLOSE, 0, 0 );
-
 	RestoreTaskbar();
+#endif
+
+	
 	sys.ui->Release();
 	delete( sys.tenlan );
 	delete( sys.ui );
 	free( gd );
-	RestoreTaskbar();
+	//RestoreTaskbar();
 }
 
