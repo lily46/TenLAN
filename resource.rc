@@ -10,3 +10,5 @@ IMG_ITEM                IMAGE                   "./material/item.png"
 IMG_CATE_ICON           IMAGE                   "./material/cateicon.png"
 
 BGM_TITLE               SOUND                   "./material/BigPresent.ogg"
+SELECT_BGM0             SOUND                   "./material/sky0.ogg"
+SELECT_BGM1             SOUND                   "./material/sky1.ogg"

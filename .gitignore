@@ -19,3 +19,9 @@
 *.exe
 *.out
 *.app
+*.tlog
+*.pdb
+*.sdf
+*.db
+*.res
+*.log
