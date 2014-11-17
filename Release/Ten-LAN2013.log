@@ -1,0 +1,40 @@
+﻿2014/11/17 0:03:58 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\ｙ\Documents\GitHub\TenLAN\Ten-LAN2013.vcxproj" (Build ターゲット)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USING_V110_SDK71_ /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt tenran2014.cpp
+         tenran2014.cpp
+     1>tenran2014.cpp(106): warning C4244: '初期化中' : 'double' から 'int' への変換です。データが失われる可能性があります。
+     1>tenran2014.cpp(107): warning C4244: '引数' : 'double' から 'int' への変換です。データが失われる可能性があります。
+     1>tenran2014.cpp(118): warning C4244: '引数' : 'double' から 'unsigned char' への変換です。データが失われる可能性があります。
+     1>tenran2014.cpp(136): warning C4244: '初期化中' : 'double' から 'int' への変換です。データが失われる可能性があります。
+     1>tenran2014.cpp(137): warning C4244: '引数' : 'double' から 'int' への変換です。データが失われる可能性があります。
+     1>tenran2014.cpp(139): warning C4244: '引数' : 'double' から 'int' への変換です。データが失われる可能性があります。
+     1>tenran2014.cpp(140): warning C4244: '引数' : 'double' から 'int' への変換です。データが失われる可能性があります。
+     1>tenran2014.cpp(197): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>tenran2014.cpp(237): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>tenran2014.cpp(315): warning C4244: '引数' : 'double' から 'unsigned char' への変換です。データが失われる可能性があります。
+     1>tenran2014.cpp(152): warning C4101: 'prog' : ローカル変数は 1 度も使われていません。
+     1>tenran2014.cpp(339): warning C4101: 'prog' : ローカル変数は 1 度も使われていません。
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ｙ\Documents\GitHub\TenLAN\Release\Ten-LAN2013.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ｙ\Documents\GitHub\TenLAN\Release\Ten-LAN2013.pdb" /SUBSYSTEM:WINDOWS,"5.01" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ｙ\Documents\GitHub\TenLAN\Release\Ten-LAN2013.lib" /MACHINE:X86 /SAFESEH Release\resource.res
+         Release\common.obj
+         "Release\Ten-LAN_Main.obj"
+         Release\TenLAN.obj
+         Release\tenran2014.obj
+         Release\HirokiMetro.obj
+         コード生成しています。
+         コード生成が終了しました。
+     1>MikanMovie.lib(MikanMovieManagement.obj) : warning LNK4204: 'C:\Users\ｙ\Documents\GitHub\TenLAN\Release\vc120.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
+     1>MikanMovie.lib(MikanMovie.obj) : warning LNK4204: 'C:\Users\ｙ\Documents\GitHub\TenLAN\Release\vc120.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
+     1>MikanMovie.lib(MikanMoviePlayer.obj) : warning LNK4204: 'C:\Users\ｙ\Documents\GitHub\TenLAN\Release\vc120.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
+     1>MikanMovie.lib(CriticalLock.obj) : warning LNK4204: 'C:\Users\ｙ\Documents\GitHub\TenLAN\Release\vc120.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
+     1>MikanMovie.lib(VMRSurfaceAllocator.obj) : warning LNK4204: 'C:\Users\ｙ\Documents\GitHub\TenLAN\Release\vc120.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
+     1>MikanMovie.lib(DrawMikanMovie.obj) : warning LNK4204: 'C:\Users\ｙ\Documents\GitHub\TenLAN\Release\vc120.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
+     1>MikanMovie.lib(combase.obj) : warning LNK4204: 'C:\Users\ｙ\Documents\GitHub\TenLAN\Release\vc120.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
+     1>MikanMovie.lib(SurfaceList.obj) : warning LNK4204: 'C:\Users\ｙ\Documents\GitHub\TenLAN\Release\vc120.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
+         Ten-LAN2013.vcxproj -> C:\Users\ｙ\Documents\GitHub\TenLAN\Release\Ten-LAN2013.exe
+     1>プロジェクト "C:\Users\ｙ\Documents\GitHub\TenLAN\Ten-LAN2013.vcxproj" (Build ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:04.60

@@ -368,7 +368,7 @@ int GameEnd( void )
 			//sys.end = 0;
 			sys.tenlan->SetEndMode( 0 );
 		}
-		if ( sys.tenlan->InputRight() % 20 == 1 || 
+		if ( sys.tenlan->InputRight() % 20 == 1 ||
 		     sys.tenlan->InputLeft()  % 20 == 1 ||
 		     sys.tenlan->InputUp()    % 20 == 1 ||
 		     sys.tenlan->InputDown()  % 20 == 1 )
@@ -414,15 +414,17 @@ void SystemInit( void )
 {
 	char a[] = MikanVersion;
 
-	// Ten-LAN起動中であることを知らせる環境変数の定義。
-	SetEnvironmentVariable( "TENLAN", "1" );
-	
+#ifndef _DEBUG
 	//    char *exe, dir[512];
 #ifndef _DEBUG
 	DWORD startpid, errcode;
 	PROCESS_INFORMATION pi;
 	STARTUPINFO si;
+#endif
+	SetEnvironmentVariable( "TENLAN", "1" );
 
+
+#ifndef _DEBUG
 	ZeroMemory( &( si ), sizeof( si ) );
 	si.cb=sizeof( si );
 	if ( CreateProcess( NULL, "./blackwindow.exe", NULL, NULL, FALSE, NORMAL_PRIORITY_CLASS, NULL, NULL, &(si), &(pi) ) )
@@ -570,7 +572,7 @@ int MainLoop( void )
 					return 1;
 				}
 			}
-			if( sys.tenlan->InputRight() % 20 == 1 || 
+			if( sys.tenlan->InputRight() % 20 == 1 ||
 				sys.tenlan->InputLeft()  % 20 == 1 ||
 				sys.tenlan->InputUp()    % 20 == 1 ||
 				sys.tenlan->InputDown()  % 20 == 1 )
@@ -598,11 +600,11 @@ void CleanUp( void )
 	RestoreTaskbar();
 #endif
 
-	
+
 	sys.ui->Release();
 	delete( sys.tenlan );
 	delete( sys.ui );
 	free( gd );
-	//RestoreTaskbar();
+
 }
 
