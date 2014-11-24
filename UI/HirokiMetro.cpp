@@ -4,6 +4,7 @@
 
 #define INFOBAR_COLOR 0x7fefefef
 
+
 UI_Hiroki_Metro::UI_Hiroki_Metro( class TenLANBase *tenlanbase )
 {
 	int height;
@@ -123,9 +124,11 @@ int UI_Hiroki_Metro::DrawMotionBox( int x, int y, int width, int height, double 
 		_MikanDraw->EditPolygonVertex( 0, 5, 1.0, height, 0, 0, 0, PVEDIT_XY );
 		_MikanDraw->EditPolygonVertex( 0, 6, 0.0, height, 0, 0, 0, PVEDIT_XY );
 	}
-	_MikanDraw->DrawPolygon( 0, x, y );
+	//_MikanDraw->DrawPolygon( 0, x, y );
 	return 0;
 }
+
+
 
 int UI_Hiroki_Metro::SelectScreen( int enable_input )
 {
@@ -434,3 +437,5 @@ int UI_Hiroki_Metro::ReloadTexture( void )
 {
 	return 0;
 }
+
+

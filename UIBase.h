@@ -31,6 +31,7 @@ struct GAMEDATA
 	char txfile[ 512 ];            // テクスチャのファイルパス。
 	int cnum;                      //
 	char category[ CATEGORY_MAX ]; // どのカテゴリに所属しているか。
+	int absoluteNum;
 };
 
 // リソース絡みのお知らせ

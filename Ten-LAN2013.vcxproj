@@ -13,6 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{DE074DB1-56EC-4846-B02C-B5D36AC1FEA1}</ProjectGuid>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectName>Ten-LAN2014</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -93,6 +94,7 @@
     <ClCompile Include="common.cpp" />
     <ClCompile Include="Ten-LAN_Main.cpp" />
     <ClCompile Include="TenLAN.cpp" />
+    <ClCompile Include="tenran2014.cpp" />
     <ClCompile Include="UI\HirokiMetro.cpp" />
   </ItemGroup>
   <ItemGroup>

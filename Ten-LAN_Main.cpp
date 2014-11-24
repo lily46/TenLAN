@@ -53,7 +53,7 @@ int InitGamelist( void )
 	struct stat fstat;
 
 	sprintf_s( filepath, 1023, "%s\\*", GAMEDIR );
-	gd = (GDATA *)calloc( 36, sizeof( GDATA ) );
+	gd = (GDATA *)calloc( 255, sizeof( GDATA ) );
 	sys.tenlan->SetGameMax( 0 );
 	if ( ( hdir = FindFirstFile( filepath, &status ) ) != INVALID_HANDLE_VALUE )
 	{
@@ -405,28 +405,24 @@ int PrintVersion( void )
 }
 
 char WTIT[] = TITLE;
-#ifndef _DEBUG
 HWND wnd;
-#endif
 
 //ウィンドウ生成前に1度だけ実行
 void SystemInit( void )
 {
 	char a[] = MikanVersion;
-
 #ifndef _DEBUG
 	//    char *exe, dir[512];
-#ifndef _DEBUG
 	DWORD startpid, errcode;
 	PROCESS_INFORMATION pi;
 	STARTUPINFO si;
 #endif
-	SetEnvironmentVariable( "TENLAN", "1" );
-
+	SetEnvironmentVariable("TENLAN", "1");
 
 #ifndef _DEBUG
 	ZeroMemory( &( si ), sizeof( si ) );
 	si.cb=sizeof( si );
+
 	if ( CreateProcess( NULL, "./blackwindow.exe", NULL, NULL, FALSE, NORMAL_PRIORITY_CLASS, NULL, NULL, &(si), &(pi) ) )
 	{
 		Sleep( 1000 );
@@ -494,10 +490,9 @@ void UserInit( void )
 #ifndef _DEBUG
 	HideTaskbar();
 #endif
-
 	// UIはここで指定する。
 	// UIはUIBaseクラスを継承したクラスであれば何でも良い。
-	sys.ui = new UI_Hiroki_Metro( sys.tenlan );//new UI_Hiroki();//new UI_Tour();
+	sys.ui = new UI_2014( sys.tenlan );//new UI_Hiroki();//new UI_Tour();
 	sys.ui->Init();
 
 	sys.tenlan->SetGameMode( MF_TITLE );
@@ -599,12 +594,9 @@ void CleanUp( void )
 	SendMessage ( wnd, WM_CLOSE, 0, 0 );
 	RestoreTaskbar();
 #endif
-
-
 	sys.ui->Release();
 	delete( sys.tenlan );
 	delete( sys.ui );
 	free( gd );
-
 }
 

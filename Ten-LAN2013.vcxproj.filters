@@ -40,6 +40,9 @@
     <ClCompile Include="UI\HirokiMetro.cpp">
       <Filter>ソース</Filter>
     </ClCompile>
+    <ClCompile Include="tenran2014.cpp">
+      <Filter>ソース</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ten-LAN.h">
